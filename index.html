@@ -76,21 +76,39 @@
         /* Mobile Menu Toggle */
         .menu-toggle {
             display: none;
-            background: rgba(128, 0, 32, 0.9);
-            border: 2px solid white;
-            color: white;
-            font-size: 1.5em;
+            font-size: 28px;
+            background: none;
+            border: none;
             cursor: pointer;
-            padding: 8px 12px;
-            position: fixed;
-            left: 15px;
-            top: 15px;
-            z-index: 1001;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            line-height: 1;
         }
-        
+        .main-menu {
+            display: flex;
+            gap: 15px;
+        } 
+
+        @media (max-width: 768px) {
+        .menu-toggle {
+            display: block;
+        }
+
+        .main-menu {
+            display: none;
+            flex-direction: column;
+            background: #7a1f2a;
+            padding: 10px;
+        }
+
+        .main-menu a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .main-menu.open {
+            display: flex;
+        }
+        }
+
         .menu-toggle:active {
             background: rgba(160, 82, 45, 0.9);
         }
@@ -489,6 +507,13 @@
         }
     </style>
 </head>
+
+<script>
+document.getElementById("menu-toggle").addEventListener("click", function () {
+  document.getElementById("main-menu").classList.toggle("open");
+});
+</script>
+
 <body>
     <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">☰</button>
     
