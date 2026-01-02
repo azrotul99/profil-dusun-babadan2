@@ -495,16 +495,39 @@
             }
         }
         @media (max-width:768px){
-            .menu-toggle{display:block;}
-            #mainMenu{
-            display:none;
-            flex-direction:column;
-            background:#800020;
-        }
-            #mainMenu.open{
-            display:flex;
-        }
-        }
+  .menu-toggle{
+    display:block;
+    position:fixed;
+    top:15px;
+    right:15px;
+    color:white;
+    z-index:9999;
+  }
+
+  #mainMenu{
+    display:none;
+    position:fixed;
+    top:70px;
+    right:0;
+    width:100%;
+    background:#800020;
+    flex-direction:column;
+    z-index:9998;
+  }
+
+  #mainMenu li{
+    border-bottom:1px solid rgba(255,255,255,.15);
+  }
+
+  #mainMenu li a{
+    padding:15px;
+    font-size:16px;
+  }
+
+  #mainMenu.open{
+    display:flex;
+  }
+}
 
     </style>
 </head>
