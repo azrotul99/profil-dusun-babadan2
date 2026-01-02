@@ -371,11 +371,23 @@
 
         /* Mobile Optimizations */
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-                padding: 15px 15px 15px 70px;
-            }
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;  /* ← PADDING RATA SEMUA SISI */
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .header-text {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .header-text p {
+        text-align: center;
+        width: 100%;
+    }
 
             .logo {
                 width: 60px;
