@@ -505,28 +505,23 @@
                 transform: scale(0.98);
             }
         }
+        @media (max-width:768px){
+            nav ul{display:none;}
+            nav ul.open{display:flex; flex-direction:column;}
+        }
+
     </style>
 </head>
 
 <script>
-document.getElementById("menu-toggle").addEventListener("click", function () {
-  document.getElementById("main-menu").classList.toggle("open");
-});
+function toggleMenu() {
+    document.getElementById("mainMenu").classList.toggle("open");
+}
 </script>
 
 <body>
-    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">☰</button>
-    <button id="menu-toggle" class="menu-toggle">☰</button>
+    <button id="menuToggle" class="menu-toggle" aria-label="Toggle Menu" onclick="toggleMenu()">☰</button>
 
-<nav id="main-menu" class="main-menu">
-  <a href="#beranda">Beranda</a>
-  <a href="#profil">Profil</a>
-  <a href="#visi-misi">Visi & Misi</a>
-  <a href="#struktur">Struktur</a>
-  <a href="#potensi">Potensi</a>
-  <a href="#galeri">Galeri</a>
-  <a href="#kontak">Kontak</a>
-</nav>
     <header>
         <div class="header-content">
             <div class="logo">🏘️</div>
@@ -538,7 +533,7 @@ document.getElementById("menu-toggle").addEventListener("click", function () {
     </header>
 
     <nav>
-        <ul id="mainMenu">
+        <ul id="mainMenu" class="main-menu">
             <li><a href="#beranda">Beranda</a></li>
             <li><a href="#profil">Profil</a></li>
             <li><a href="#visi-misi">Visi & Misi</a></li>
